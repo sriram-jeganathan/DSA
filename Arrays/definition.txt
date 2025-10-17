@@ -1,0 +1,14 @@
+Arrays
+
+An array is a collection of elements of the same data type, stored in continous memory locations, and accessed using an index.
+
+Syntax:
+int arr[5] = {5,10,15,20,25};
+
+Note:
+ - Indexing starts from 0
+ - Stored in a single block of memory
+ - Allows any element to be accessed using the index
+ - Once a static array is declared, its size is fixed
+ - Can be 1D, 2D or multidimensional
+
