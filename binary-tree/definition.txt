@@ -1,0 +1,51 @@
+
+Binary Tree
+
+Every parent node in a binary tree has atleast 2 child nodes
+
+Every node has:
+- A number (value)
+- A left pointer
+- A right pointer
+
+| LP | VAL | RP |
+
+LP - Left Pointer
+VAL - Value of Node
+RP - Right pointer
+Note:
+- There is no concept of a tail like in a linked list.
+- Left and right children are also nodes called subnodes.
+
+Example BST:
+
+                [ 7 ]
+            /            \
+        [ 5 ]           [ 9 ]
+        /  \             /  \
+    [ 2 ]   [ 7 ]    [ 4 ]   [ 10 ]
+
+There are some types of Binary Tree:
+ - Full Binary Tree
+ - Complete Binary Tree
+ - Perfect Binary Tree
+ - Balanced Binary Tree
+ - Degenerate / Pathological Tree
+
+Conditions for each bindary tree:
+
+1. Full Binary Tree
+ - Every node must either have 0 or 2 children ( No node must have a single subnode )
+
+2. Complete Binary Tree
+ - All levels are completely filled ( except the last node )
+ - Every node is filled from the left to the right
+
+3. Perfect Binary Tree
+ - All levels are completetly filled
+ - All nodes must have 2 nodes
+ - All nodes must be of the same level
+ - Every perfect binary tree is a full binary tree
+
+4. Balanced Binary Tree
+ - 
