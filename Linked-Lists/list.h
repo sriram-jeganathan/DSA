@@ -11,9 +11,16 @@ typedef struct list{
 }List;
 
 List* createList( void );
-void addNode ( List*, int x , int pos );
-void deleteNode ( List*, int x );
+void insertTail ( List*, int );
+void insertHead ( List*, int ); 
+void insertMiddle ( List*, int, int );
+void forwardPrint ( List* );
+void backwardPrint ( List* );
+void printBackward ( Node*, Node* );
+void deleteNode ( List*, int );
 void reverseList ( List* );
 void reverse ( List* );
-void detectLoop ( 
-
+void detectLoop ( List* );
+void searchNode ( List*, int );
+int count ( List* );
+void freeList ( List* );
