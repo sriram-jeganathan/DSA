@@ -95,8 +95,11 @@ void deleteNode ( List *list, int x ) {
             Node *prev = current;
             break;
         }
+        current = current->next;
     }
     
+    prev->next = current->next;
+    free ( current );
     
 }
 
