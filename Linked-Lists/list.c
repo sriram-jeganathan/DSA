@@ -91,7 +91,7 @@ void deleteNode ( List *list, int x ) {
     Node *current = list->head;
 
     while ( NULL != current ) {
-        if ( current->next->val = x ) {
+        if ( current->next->val == x ) {
             Node *prev = current;
             break;
         }
