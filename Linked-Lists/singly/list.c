@@ -1,4 +1,4 @@
-#include "list.c"
+#include "list.h"
 
 List* createList ( void ) {
     List* list = malloc ( sizeof ( List ) );
@@ -71,8 +71,8 @@ void insertMiddle ( List *list, int x, int pos ) {
         current++;
     }
 
-    Node *temp = current->next;
-    current->next = newNode;
+    Node *temp = curr->next;
+    curr->next = newNode;
     newNode->next = temp;
     return;
 }
@@ -87,8 +87,11 @@ void forwardPrint ( List *list ) {
     return;
 }
 
+
+
 void deleteNode ( List *list, int x ) {
     Node *current = list->head;
+    Node *prev;
 
     while ( NULL != current ) {
         if ( current->next->val == x ) {
@@ -99,7 +102,6 @@ void deleteNode ( List *list, int x ) {
     }
     
     prev->next = current->next;
-    free ( current );
     
 }
 
@@ -114,7 +116,7 @@ int count ( List *list ) {
     return count;
 }
 
-void searchNode ( List *list, x ) {
+void searchNode ( List *list, int x ) {
     Node *current = list->head;
 
     while ( current != NULL ) {
