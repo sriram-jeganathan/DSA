@@ -22,14 +22,14 @@ int main ( void ) {
     forwardPrint ( list1 );
     printf ( "List 2:\t" );
     forwardPrint ( list2 );
-
+/*
     // Backward printing the two lists
     printf ( "Backward Printing\n" );
     printf ( "List 1:\t" );
     backwardPrint ( list1 );
     printf ( "List 2:\t" );
     backwardPrint ( list2 );
-
+*/
     // Deleting a node from each list
     printf ( "Node Deletion\n" );
 
