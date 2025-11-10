@@ -87,7 +87,19 @@ void forwardPrint ( List *list ) {
     return;
 }
 
+void printBackward ( Node *current, Node *previous ) {
+    if ( NULL == current ) {
+        return;
+    }
+    printBackward ( current->next, current );
+    printf ( "%d\t", current->data );
+}
 
+void backwardPrint ( List *list ) {
+    printBackward ( list->head, NULL );
+    printf ( "NULL\n" );
+    return;
+}
 
 void deleteNode ( List *list, int x ) {
     Node *current = list->head;
