@@ -117,6 +117,24 @@ void deleteNode ( List *list, int x ) {
     
 }
 
+void reverse ( Node *current, Node *previous ) {
+    if ( current == NULL ) {
+        return;
+    }
+    reverse ( current->next, current );
+    current->next = current;
+}
+
+void reverseList ( List *list ) {
+    Node *current = list->head;
+    reverse ( current, NULL );
+    return;
+}
+
+void detectLoop ( List *list ) {
+
+}
+
 int count ( List *list ) {
     Node *current = list->head;
     int count = 0;
