@@ -15,6 +15,6 @@ class List {
 		void addNode ( int );
 		void printList ( );
 		void deleteNode ( int );
-		void findNode ( int );
-		void Size ( );
+		int findNode ( int );
+		int Size ( );
 };
