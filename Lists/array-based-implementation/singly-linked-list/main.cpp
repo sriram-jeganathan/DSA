@@ -2,14 +2,17 @@
 
 int main () {
 	List list;
-	for ( int i = 10; i <= 110; i += 10 ) {
+	for ( int i = 10; i <= 100; i += 10 ) {
 		list.addNode ( i );
 	}
 	list.printList();
+	cout << endl;
+	list.deleteNode ( 10 );
+	list.printList();
+	cout << endl;
 	list.deleteNode ( 110 );
 	list.printList();
-	list.findNode ( 70 );
-	list.findNode ( 65 );
+	cout << endl;
 	list.Size();
 	
 	return 0;

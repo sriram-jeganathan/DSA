@@ -44,7 +44,11 @@ void List::deleteNode ( int val ) {
 		cout << "Node does not exist!" << endl;
 		return;
 	}
-	arr[pos] = arr[pos+1];
+
+	for (int i = pos; i < size - 1; i++) {
+		arr[i] = arr[i + 1];
+	}
+
 	cout << "Node deleted!" << endl;
 	size--;
 }
