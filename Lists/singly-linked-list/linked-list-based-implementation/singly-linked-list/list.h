@@ -1,2 +1,10 @@
 #include <iostream>
-using namepsace
+using namepsace std;
+
+class Node {
+  public:
+    int val;
+    Node *next;
+
+
+}
