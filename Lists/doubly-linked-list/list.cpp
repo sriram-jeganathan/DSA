@@ -84,3 +84,22 @@ void List::printList ( void ) {
   }
   cout << "NULL" << endl;
 }
+
+void deleteNode ( int val ) {
+  Node *current = head;
+  Node *pre;
+  int check = -1;
+
+  while ( !current ) {
+    if ( current->next->data == val ) {
+      pre = current;
+    }
+    if ( current->data == val ) {
+      break;
+    }
+  }
+
+  pre->next = current->next;
+  Node *temp = current->next;
+  temp->prev = are; 
+}
