@@ -1,38 +1,57 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
-void dfs ( int node, vector<int> adj, int vis[], vector<int> res; ) {
-	vis[node] = 1;
-	res.push_back(node);
+void dfs(int node, const vector<vector<int>>& graph,
+         vector<int>& path, vector<vector<int>>& paths) {
 
-	for ( auto i : adj[node] ) {
-		if ( !vis[i] ) {
-			dfs ( i, adj, vis, res );
-		}
-	}
+    path.push_back(node);
+
+    // Target reached
+    if (node == static_cast<int>(graph.size()) - 1) {
+        paths.push_back(path);
+        path.pop_back();
+        return;
+    }
+
+    // Explore neighbors
+    for (int next : graph[node]) {
+        dfs(next, graph, path, paths);
+    }
+
+    // Backtrack
+    path.pop_back();
 }
 
-int main ( void ) { 
-	int n, m;
-	cin >> n >> m;
-	vector<int> adj[n+1];
-	for ( int i = 1; i <= m; i++ ) {
-		int x, y;
-		cin >> x >> y;
-		adj[x].push_back(y);
-		adj[y].push_back(x)
-	}
+vector<vector<int>> allPathsSourceTarget(const vector<vector<int>>& graph) {
+    vector<int> path;
+    vector<vector<int>> paths;
 
-	vector<int> res;
-	int vis[n+1] = {0};
+    dfs(0, graph, path, paths);
 
-	for ( int i = 1; i <= n; i++ ) {
-		if ( !vis[i] ) {
-			dfs ( i , adj, vis, res );
-		}
-	}
+    return paths;
+}
 
-	return 0;
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    vector<vector<int>> graph(n);
+
+    for (int i = 0; i < m; i++) {
+        int x, y;
+        cin >> x >> y;
+        graph[x].push_back(y);
+    }
+
+    vector<vector<int>> paths = allPathsSourceTarget(graph);
+
+    for (const auto& path : paths) {
+        for (int node : path) {
+            cout << node << " ";
+        }
+        cout << '\n';
+    }
+
+    return 0;
 }
