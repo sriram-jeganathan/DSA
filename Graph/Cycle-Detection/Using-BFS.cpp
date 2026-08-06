@@ -4,8 +4,8 @@
 #include <algorithm>
 using namespace std;
 
-bool detectCycle ( int node, vector<vector<int>> &adj, int &vis[] ) {
-	// { destination, source } - DS of Queue
+bool detectCycle ( int node, vector<vector<int>> &adj, int vis[] ) {
+	// { node, parent } - DS of Queue
 	queue<pair<int,int>> q;
 	vis[node] = 1;
 	q.push({node,-1});
@@ -33,17 +33,17 @@ int main ( void ) {
 	int n, m;
 	cout << "N, M -> :";
 	cin >> n >> m;
-	vector<vector<int>>;
+	vector<vector<int>> adj(n);
 
 	for ( int i = 0; i < m; i++ ) {
 		int x, y;
 		cout << "X-Y: ";
 		cin >> x >> y;
-
 		adj[x].push_back(y);
 		adj[y].push_back(x);
 	}
 
+	cout << "Cycle Detection" << endl;
 
 	int vis[n] = {0};
 	for (int i = 0; i < n; i++) {

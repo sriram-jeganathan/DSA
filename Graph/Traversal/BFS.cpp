@@ -5,6 +5,8 @@
 using namespace std;
 
 int main ( void ) {
+	// Adjacency List 
+	
 	int n, m;
 	cout << "N, M -> ";
 	cin >> n >> m;
@@ -30,6 +32,8 @@ int main ( void ) {
 		cout << "\n";
 	}
 	cout << "\n";
+
+	// BFS Traversal
 
 	queue<int> q;
 	vector<int> bfs;
